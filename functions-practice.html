@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+    // Mini-exercise: write a function that returns true if a number is divisible by either 7 or 3, or false if a number is divisible by neither 7 nor 3.
+    function sevenOrThree(number) {
+      return number % 7 === 0 || number % 3 === 0;
+    }
+
+    // Mini-exercise 2: write a function that returns true if a number is divisible by either 3 or 2, or false if it is divisible by neither 2 nor 3.
+    function threeOrTwo(number) {
+      return number % 3 || number % 2;
+    }
+
+    // Mini-exercise 3: write a function that returns true if a number is both odd and divisible by 3, or false if the number is neither odd nor divisible by 3.
+    function oddAndThree(number) {
+      return number % 2 !== 0 && number % 3 === 0;
+    }
+
+
+    // Mini-exercise 4: modify the above function so that it returns true if the number is either odd or divisible by 3, or false if it is neither odd nor divisible by 3. (edited)
+    function eitherOddOrThree(number) {
+      return number % 2 !== 0 || number % 3 === 0;}
+
+    let myName = "Aiden";
+    let myLastName = "luce";
+    let myTitle = "Dr.";
+
+    let myFullName = myTitle + " " + myName + " " + myLastName;
+    console.log(myFullName)
+
+    let sentence = "All the world";
+    sentence = sentence + " 's a stage";
+    console.log("Shakespeare said: \"All the world's a stage\'");
+    console.log('${myTitle} ${myName} ${myLastName}');
+
+    // Mini-exercise.  Write a function that takes a person's first, middle, and last names and returns their full name.
+    function fullName(fName, mName, lName) {
+        return (`${fName} ${mName} ${lName}`);
+
+    }
+function aName (name1,name2, name3, name4, name5, name6){
+        return (`${name1} ${name2} ${name3} ${name4} ${name5} ${name6}`);
+}
+
+    // Mini exercise. Write a function that takes a house number, street name, city, state, and zip code and returns the full address.
+     function adress(houseNumber, streetName, city, state, zipCode) {
+        return `${houseNumber} ${streetName} ${city} ${state} ${zipCode}`;
+     }
+    //         Bonus.  Write a function that takes a number representing the temperature and a boolean representing whether the temperature is Fahrenheit or not.  If it is Fahrenheit, the function converts to Celsius.  Otherwise, it convets to Fahrenheit.  Look up the Fahrenheit to Celsius conversion formula online.
+    //         Bonus.  Change your functions for liters-gallons and miles-kilometers so they convert both ways.
+
+  </script>
+
+</body>
+</html>
