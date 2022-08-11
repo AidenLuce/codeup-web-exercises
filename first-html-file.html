@@ -26,7 +26,32 @@
             return Math.abs(number) % 2 === 1;
         }
         function byFive(number) {
-            return Math.abs(number) / 5 === 0;}
+            return Math.abs(number) / 5 === 0;
+            console.log("this number is divisable by 5")
+        }
+        // Mini-exercise: write a function that returns true if a number is divisible by either 7 or 3, or false if a number is divisible by neither 7 nor 3.
+        function sevenOrThree(number) {
+            return number % 7 === 0 || number % 3 === 0;
+        }
+
+        // Mini-exercise 2: write a function that returns true if a number is divisible by either 3 or 2, or false if it is divisible by neither 2 nor 3.
+        function threeOrTwo(number) {
+            return number % 3 || number % 2;
+        }
+
+        // Mini-exercise 3: write a function that returns true if a number is both odd and divisible by 3, or false if the number is neither odd nor divisible by 3.
+        function oddAndThree(number) {
+            return number % 2 !== 0 && number % 3 === 0;
+        }
+
+
+        // Mini-exercise 4: modify the above function so that it returns true if the number is either odd or divisible by 3, or false if it is neither odd nor divisible by 3. (edited)
+        function eitherOddOrThree(number) {
+            return number % 2 !== 0 || number % 3 === 0;}
+
+
+
+
 
     </script>
 
