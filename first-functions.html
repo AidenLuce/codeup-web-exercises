@@ -6,6 +6,9 @@
 </head>
 <body>
   <script>
+      document.body.style.backgroundColor = "black";
+      //basic functions
+
     function calculateCircumfrence(radius){
         return 2 * 3.14159 * radius;
     }
@@ -16,7 +19,14 @@
      function galToLit(gallons) {
         return gallons * 3.7854;
      }
-
+function CtoF(celcius){
+        return celcius * 9 / 5 + 32;
+}
+// let number = 45;
+    function isOdd(number) {
+        return number % 2 == 1;
+    }
+    //continue here
 
 
 
@@ -78,6 +88,73 @@
     }
     //         Bonus.  Write a function that takes a number representing the temperature and a boolean representing whether the temperature is Fahrenheit or not.  If it is Fahrenheit, the function converts to Celsius.  Otherwise, it convets to Fahrenheit.  Look up the Fahrenheit to Celsius conversion formula online.
     //         Bonus.  Change your functions for liters-gallons and miles-kilometers so they convert both ways.
+            //  give it a try later
+
+    // Create a function that takes a string and returns it in upper case.
+    function allUppercase(words){
+        return words.toUpperCase();
+    }
+
+    // Create a function that takes a string and returns it in lower case.
+    function allLowercase(words){
+        return words.toLowerCase();
+
+    }
+    // Create a function that takes a string and trims any leading or trailing blank spaces.
+    function removeSpace(words) {
+        return words.trim();
+    }
+
+    //     Create a function that takes a string and returns the number of characters in that string.
+    function count(words){
+       return words.length();
+    }
+    //     Bonus Challenges:
+    //     Create a function that takes a single character and a string and returns the index of the specified character in that string.
+    function indexOfCharacter(char, string) {
+        return string.indexOf(char);
+    }
+    //     Create a function that takes three strings and returns a copy of the first string with the first instance of the second string substituted for the characters of the third string.
+    //     Do the same, but replace all instances of the second string with the characters of the third string.
+    //     Create a function that takes a string and two numbers and returns the subset of the original string assuming the two numbers are indexes.
+
+let numericString = "42";
+let theAnswer = 42;
+
+function isNumber(value) {
+    if (isNaN(value)) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+  //Write a function that takes two values.  If the values can be converted to numbers, the function should return their product.  Otherwise, the function should return false.
+
+//       function productOfNumbers(input1, input2){
+//     if( Number(input1) && Number(input2)){
+//         if(isNaN (input1) || isNaN (input2)){
+//             return(input1 * input2);
+//         } else {
+//             return false;
+//         }
+//     }
+// }
+      function productOfNumbers(input1, input2) {
+          if (isNaN(parseFloat(input1)) || isNaN(parseFloat(input2))) {
+              return false;
+          } else {
+              return parseFloat(input1) * parseFloat(input2);
+          }
+      }
+
+      function sumOfNumbers(input1, input2){
+    if (isNaN(parseFloat(input1)) || isNaN(parseFloat)){
+        return false;
+    } else {
+        return parseFloat(input1) + parseFloat(input2);
+    }
+      }
 
   </script>
 
