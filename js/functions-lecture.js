@@ -64,6 +64,13 @@ const add = function(num1, num2){
 //arrow function
 const add = (num1, num2) => num1 + num2;
 
+//when there is only one parameter, you dont need parentheses around it
+const addTen = number => number + 10;
+
+//if there are no parameters, you use empty parenthesis
+const hellowWorld = () => "Hello World";
+
+
 
 
 
