@@ -17,17 +17,17 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-function analyzeColor(color) {
-    if (color === 'red') {
-        return('An apple is red')
-    } else if(color === 'blue'){
-        return('blueberries are blue')
-    } else if (color === 'yellow'){
-        return('Bananas are yellow')
-    } else{
-        return('What is ' + color + '?' )
-    }
-}
+// function analyzeColor(color) {
+//     if (color === 'red') {
+//         return('An apple is red')
+//     } else if(color === 'blue'){
+//         return('blueberries are blue')
+//     } else if (color === 'yellow'){
+//         return('Bananas are yellow')
+//     } else{
+//         return('What is ' + color + '?' )
+//     }
+// }
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -40,19 +40,37 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-let aRandomColor = (analyzeColor(randomColor));
-console.log(aRandomColor)
+// let aRandomColor = (analyzeColor(randomColor));
+// console.log(aRandomColor)
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-
+function analyzeColor(color){
+    switch(color){
+        case 'red' :
+            return ('An apple is red')
+            break;
+        case 'blue':
+            return ('blueberries are blue')
+            break;
+        case 'yellow':
+            return ('bananas are yellow')
+            break;
+        default:
+            return ('What is ' + color + '?' )
+            break;
+    }
+}
+console.log(analyzeColor(randomColor))
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+let askForColor = prompt("name a color any color")
+alert(analyzeColor(askForColor));
 
 /* ########################################################################## */
 
@@ -75,6 +93,20 @@ console.log(aRandomColor)
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+function calculateTotal(luckyNumber, totalAmount){
+    if (luckyNumber === 1){
+        return totalAmount - (totalAmount * .10)
+    } else if(luckyNumber === 2){
+        return totalAmount - (totalAmount * .25)
+    }else if(luckyNumber === 3) {
+        return totalAmount - (totalAmount * .35)
+    }else if(luckyNumber === 4) {
+        return totalAmount - (totalAmount * .50)
+    }else if(luckyNumber === 5) {
+        return 0
+    }
+}
+
 
 /**
  * TODO:
@@ -85,7 +117,14 @@ console.log(aRandomColor)
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+
+let totalAmount = prompt("What is your total bill?")
+alert('Your lucky number is ' + luckyNumber)
+alert('Your price before the discount was '+ totalAmount +', your discounted price is ' + calculateTotal(luckyNumber, totalAmount))
+
+
+
 
 /**
  * TODO:
@@ -105,3 +144,30 @@ console.log(aRandomColor)
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+function wantToEnterNumber(){
+    let wantToEnterNumber = confirm('Would you like to enter a number')
+    if (wantToEnterNumber){
+        let enterNumber = prompt('Please enter a number')
+        alert(evenOrOdd(enterNumber))
+        alert(enterNumber + ' plus 100 is equal to ' + (parseFloat(enterNumber) + 100))
+        alert(enterNumber + positiveOrNegative(enterNumber))
+    } else alert('okay...')
+}
+
+wantToEnterNumber()
+
+function evenOrOdd(number){
+    if(number % 2 === 0){
+        return (number + ' is an even number')
+    } else {
+        return (number + ' is an odd number')
+    }
+}
+function positiveOrNegative(number){
+    if (number >= 0){
+        return (' is positive')
+    } if (number < 0){
+        return (' is negative')
+    }
+}
+
