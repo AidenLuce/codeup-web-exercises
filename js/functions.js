@@ -10,6 +10,7 @@ function sayHello(name){
     return "Hello, " + name + "!"
 }
 
+
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -87,7 +88,7 @@ function calculateTip(tipPercentage,totalBill){
  * then display the dollar amount they should tip
  */
 let billTotal = prompt ("What is the bill total?")
-let percentage = prompt ('How much do you want to tip?')
+let percentage = prompt ('How much do you want to tip? (type it as a decimal pls)')
 alert(calculateTip(percentage, billTotal))
 
 
