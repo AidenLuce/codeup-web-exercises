@@ -167,7 +167,7 @@ function positiveOrNegative(number){
     if (number >= 0){
         return (' is positive')
     } if (number < 0){
-        return (' is negative')
+        return (' is negative');
     }
 }
 
