@@ -58,16 +58,47 @@
 // for(let i = 100; i >= 0; i--){
 //     console.log(i);
 // }
-for (i = 0; i < 100; i++){
-    console.log(i)
-}
-
-// let i = 0;
-// while (i < 100){
-//     console.log(i);
-//     i++;
+// for (i = 0; i < 100; i++){
+//     console.log(i)
 // }
-console.log('outside the loop: '+ i)
+//
+// // let i = 0;
+// // while (i < 100){
+// //     console.log(i);
+// //     i++;
+// // }
+// console.log('outside the loop: '+ i)
 
 
+/** */
+// for(let i = 1; i <= 9; i++){
+// let outputString = "";
+// for (let count = 0; count < i; count++){
+//     outputString = outputString + i;
+//     }
+// console.log(outputString);
+// }
 
+/* Produces =
+* 1
+* 22
+* 333
+* 4444
+* 55555
+* 666666
+* 7777777
+* 88888888
+* 999999999*/
+
+/** Break for loop */
+
+let string = "";
+for (let i = 0; i < 8; i++){
+    let word = prompt('Lets make a sentence! \nEnter a word: ');
+    if (word === "curses"){
+        console.log('That word is not allowed');
+        break;
+    }
+    string += " " + word;
+    console.log('your sentence is: ' + string)
+}

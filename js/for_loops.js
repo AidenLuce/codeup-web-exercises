@@ -1,14 +1,16 @@
 /** Create a function named showMultiplicationTable that accepts a number and console.logs the multiplication table for that number (just multiply by the numbers 1 through 10) */
 
-function showMultiplicationTable(number){
- for(let i = 0; i < 11; i ++){
+function showMultiplicationTable(){
+    let number = prompt("Please enter a number:");
+ for(let i = 1; i <= 10; i ++){
   console.log(number + ' x ' + i + ' = ' + (i * number))
  }
 }
+showMultiplicationTable();
 
 /** Use a for loop and the code from the previous lessons to generate 10 random numbers between 20 and 200 and output to the console whether each number is odd or even. For example: */
 for (let i = 0; i <= 9; i++ ){
-    let randomNumber = Math.floor(Math.random() * 200 + 20)
+    let randomNumber = Math.floor(Math.random() * 180 + 20)
     console.log(isEven(randomNumber))
 }
 function isEven(randomNumber){
