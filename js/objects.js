@@ -102,7 +102,7 @@ let books = [
      *      ...
      */
     books.forEach(function(thing){
-        console.log(thing.book + '\n' + thing.title + '\n' + 'Author: ' + thing.author.firstName + ' ' +thing.author.lastName)
+        console.log(thing.book + '\n' + thing.title + '\n' + 'Author: ' + thing.author.firstName + ' ' +thing.author.lastName + '\n-----------')
     })
     /**
      * Bonus:
