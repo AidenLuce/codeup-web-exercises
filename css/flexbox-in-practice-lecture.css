@@ -1,0 +1,29 @@
+nav div {
+    display: flex;
+}
+nav{
+    display: flex;
+    justify-content: flex-end;
+}
+nav a {
+    margin: 10px
+}
+
+a {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
+div {
+    border: 2px solid gold;
+    padding: 20px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+}
+div a {
+    display: block;
+    text-align: center;
+    width: 150px;
+    /*margin: auto;*/
+}
