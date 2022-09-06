@@ -1,0 +1,44 @@
+body{
+    background-color: black;
+    color: white;
+}
+.flexbox {
+    border: solid white 1px;
+    padding: 5px;
+    display: flex;
+    /*height: 900px;*/
+    /*height: 70vh;*/
+    /*flex-direction: column;*/
+    /*flex-wrap: wrap;*/
+    flex-flow: row wrap;
+    /* Justify-content defines the distribution of space along the main axis of the container */
+    justify-content: flex-start;
+    /* Align-items controls the alignment of the flex items along the cross axis*/
+    align-items: flex-start;
+    /* align-content is used to control how extra cross-axis space is distributed between and around flex lines. It applies only to containers with multiple flex lines. */
+    /*align-content: center;*/
+}
+.flex-item {
+    border: solid white 1px;
+    margin: 5px;
+    padding: 5px;
+}
+.upsize {
+    font-size: 150%;
+}
+.topMargin {
+    margin-top: 30px;
+}
+.one{
+    align-self: flex-end;
+    order: 1;
+}
+.two {align-self: center;}
+/*.three{flex-grow: 2;}*/
+.four {align-self: center;}
+/*.four{flex-grow: 1;}*/
+/*.five{flex-grow: .5;}*/
+.six {
+    align-self: flex-end;
+    order: -1;
+}
