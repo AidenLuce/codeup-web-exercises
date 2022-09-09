@@ -1,0 +1,6 @@
+.img{
+    background-image: url("../img/pizza.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 346px;
+}
