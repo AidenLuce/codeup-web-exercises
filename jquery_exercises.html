@@ -6,9 +6,29 @@
 
 </head>
 <body>
+    <h1 id="header" class="codeup">This is a header!</h1>
+    <p id="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur blanditiis dolor dolore earum magnam perferendis unde voluptatibus. Aut ea ex expedita ipsam minus molestias, quos. Doloribus fugiat maxime molestiae odio.</p>
+    <ul>
+        <li class="codeup">One</li>
+        <li class="codeup">Two</li>
+        <li>Three</li>
+        <li class="codeup">Four</li>
+        <li class="codeup">Five</li>
+    </ul>
 
-<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous">
 
-</script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+            $('li').css('font-size', '20px');
+            $('*').css({
+                'background-color': '#FF0'
+            });
+            const headingContent = $('h1').html();
+            alert(headingContent);
+
+    </script>
 </body>
 </html>
