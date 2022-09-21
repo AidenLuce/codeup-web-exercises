@@ -22,12 +22,19 @@
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script>
-            $('li').css('font-size', '20px');
-            $('*').css({
-                'background-color': '#FF0'
-            });
-            const headingContent = $('h1').html();
-            alert(headingContent);
+        $("h1").on('click', function(){
+            $(this).css('background-color', 'blue')
+        });
+        $("p").on('dblclick', function(){
+            $(this).css('font-size', '18px')
+        });
+
+        $('li').hover(function(){
+            $(this).css('color', 'red')
+        },
+        function(){
+            $(this).css('color', 'unset');
+        });
 
     </script>
 </body>
