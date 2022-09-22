@@ -19,5 +19,8 @@ $(function(){
         $(this).css('background-color', 'unset');
     });
 
+    console.log($("div").text());
+    console.log($("div").html());
+
 
 });

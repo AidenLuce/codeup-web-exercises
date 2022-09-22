@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery_faq</title>
+</head>
+<style>
+  .invisible{
+    visibility: hidden;
+  }
+</style>
+<body>
+  <dl class="dataList">
+    <dt>When was Yellowstone established?</dt>
+      <dd class="invisible">Yellowstone National Park was established on March 1, 1872.</dd>
+    <dt>Was Yellowstone the first national park?</dt>
+      <dd class="invisible">Yellowstone is the world’s first national park.</dd>
+    <dt>How big is Yellowstone?</dt>
+      <dd class="invisible">3,472 square miles (8,991 km2)</dd>
+    <dt>Where is Yellowstone located?</dt>
+      <dd class="invisible">96% in Wyoming, 3% in Montana, 1% in Idaho</dd>
+    <dt>What is the highest point in Yellowstone?</dt>
+     <dd class="invisible">Highest Point: 11,358 feet (3,462 m; Eagle Peak)</dd>
+    <dt>What kind of wildlife is at Yellowstone?</dt>
+     <dd class="invisible">67 species of mammals, including seven species of native ungulates and two species of bear, 285 species of birds (150 nesting), 16 species of fish (five nonnative), More than seven aquatic invasive species (three having significant detrimental effect), Five species of amphibians, Six species of reptiles, and Two threatened species: Canada lynx, grizzly bears.</dd>
+    <dt>How many species of flowers are at Yellowstone?</dt>
+     <dd class="invisible">1,000+ species of native flowering species (3 endemic)</dd>
+    <dt>How many entrances are there to yellowstone?</dt>
+      <dd class="invisible">There are five park entrances</dd>
+    <dt>How many miles of hiking trails are at Yellowstone?</dt>
+      <dd class="invisible">Approximately 1,000 miles (1,609 km) of backcountry hiking trails.</dd>
+    <dt>Are there any campsites at Yellowstone?</dt>
+      <dd class="invisible">There are 301 backcountry campsites in Yellowstone National Park.</dd>
+  </dl>
+<button>See Responses</button>
+
+  <script src="js/jquery-3.6.1.min.js"></script>
+
+
+  <script>
+    $(function(){
+      $('button').click("click",function(){
+        $('dd').toggleClass("invisible")
+      });
+    });
+
+
+
+  </script>
+</body>
+</html>
