@@ -5,9 +5,13 @@
     <title>jquery_faq</title>
 </head>
 <style>
+
   .invisible{
     visibility: hidden;
   }
+
+
+
 </style>
 <body>
   <dl class="dataList">
@@ -32,17 +36,59 @@
     <dt>Are there any campsites at Yellowstone?</dt>
       <dd class="invisible">There are 301 backcountry campsites in Yellowstone National Park.</dd>
   </dl>
-<button>See Responses</button>
+<button id="responses">See Responses</button>
+
+  <h3>Denali National Park</h3>
+  <ul>
+    <li>DNP is home to the highest peak in North America, Denali. Called "The High One" in language of the Athabascan tribe, this towering peak stands at 20,320 feet above sea level.</li>
+    <li>The year of 1910 marked the first time that anyone had successfully summited Denali. It was a group of local residents who celebrated with hot chocolate and donuts.</li>
+    <li>Sable Pass inside DNP is known to be the best area to spot massive grizzly bears.</li>
+    <li>There are 169 different bird species, 39 mammal species, 14 fish species, and one species of amphibian known in Denali, whilst the park is also home to 1,500 species of vascular plants, lichens and mosses.</li>
+  </ul>
+  <h3>Yellowstone National Park</h3>
+  <ul>
+    <li>World's First National Park.</li>
+    <li>A designated World Heritage Site and designated Biosphere Reserve.</li>
+    <li>3,472 square miles or 8,987 square km.</li>
+    <li>96 % in Wyoming and 3 % in Montana.</li>
+  </ul>
+  <h3>Yosemite National Park</h3>
+  <ul>
+    <li>El Capitan is the largest granite monolith in the world. It rises more than 3,000 feet above the valley floor and is a favorite for experienced rock climbers.</li>
+    <li>Yosemite Falls: This is the tallest waterfall in North America. Snow runoff cascades down the 2,425 foot drop, with peak flow in May. In winter, an ice cone is often visible at the top of the falls.</li>
+    <li>Giant Sequoias and Mariposa Grove: Mariposa Grove contains about 500 mature giant sequoias. </li>
+    <li>There are 840 miles of trails to hike in Yosemite National Park</li>
+  </ul>
+
+  <section><p><button id="yellowBG">Highlight</button></p></section>
+
+<!-- END -->
 
   <script src="js/jquery-3.6.1.min.js"></script>
 
 
   <script>
     $(function(){
-      $('button').click("click",function(){
+      $('#responses').on("click",function(){
         $('dd').toggleClass("invisible")
       });
+
+      $('#yellowBG').on("click", function(){
+        $('body').find('ul').each(function(){
+          $(this).children().last().css('background-color', 'yellow')
+        });
+      });
+
+      $('h3').on("click", function (){
+        $(this).next().children().css('font-weight', 'bold');
+      });
+
+      $('li').on("click", function(){
+        $(this).parent().children().first().css("color", 'blue')
+        });
+
     });
+
 
 
 

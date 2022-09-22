@@ -17,5 +17,4 @@ $(function(){
         $("ul").last().children().children().toggleClass("sansSerif").css("text-decoration","underline dotted");
     });
 
-
 });
