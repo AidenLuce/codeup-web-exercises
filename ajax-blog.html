@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax-blog.html</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+  <div id="posts"></div>
+  <button class="bg-dark text-light">Refresh</button>
+  <script src="js/jquery-3.6.1.min.js"></script>
+<script>
+    loadTable();
+$('button').on("click", function() {
+    $('.refresh').remove();
+    loadTable();
+});
+
+function loadTable(){
+    $.ajax("data/blog.json").done(function(data){
+        data.forEach(function (more){
+            $('#posts').append(
+                `<table class="table table-dark table-striped refresh">
+                      <thead>
+                      <tr>
+                          <th scope="col">${more.title}</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                          <th scope="row">${more.content}</th>
+                      </tr>
+                      <tr>
+                          <th scope="row">${more.categories}</th>
+                      </tr>
+                      <tr>
+                          <th scope="row">${more.date}</th>
+                      </tr>
+                      </tbody>
+                  </table>`
+            );
+        });
+    });
+}
+
+</script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>

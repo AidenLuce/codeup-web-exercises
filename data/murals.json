@@ -1,0 +1,11 @@
+[
+  {
+    "mural_registration_id":"19006","artist_credit":"John Pitman Weber","artwork_title":"TILT (Together Protect the Community)","year_installed":"1976","year_restored":"2005","street_address":"2100 West Division St","zip":"60622","ward":"2","community_area_number":"25","affiliated_or_commissioning":"Chicago Public Art Group","latitude":"41.90325452","longitude":"-87.67982505","location":{"type":"Point","coordinates":[-87.67982505,41.90325452]},":@computed_region_rpca_8um6":"4",":@computed_region_vrxf_vc4k":"25",":@computed_region_6mkv_f3dw":"21560",":@computed_region_bdys_3d7i":"517",":@computed_region_43wa_7qmu":"11"
+  }, {
+  "mural_registration_id":"19043","artist_credit":"Rahmaan Statik, Max Sansing","artwork_title":"Sepia","media":"Paint","year_installed":"2016","street_address":"2230 S. Central Park Ave","zip":"60623","ward":"22","affiliated_or_commissioning":"Chicago Public Art Group","latitude":"41.850922","longitude":"-87.715009","location":{"type":"Point","coordinates":[-87.715009,41.850922]},":@computed_region_rpca_8um6":"57",":@computed_region_vrxf_vc4k":"32",":@computed_region_6mkv_f3dw":"21569",":@computed_region_bdys_3d7i":"754",":@computed_region_43wa_7qmu":"28"
+}, {
+  "mural_registration_id":"19064","artist_credit":"Damon Reed & Moses Ball","artwork_title":"Change Makers","year_installed":"2006","street_address":"3819 Ogden Ave","zip":"60623","ward":"22","affiliated_or_commissioning":"Chicago Public Art Group","description_of_artwork":"Artists: Damon Reed & Moses Ball2005"
+}, {
+  "mural_registration_id":"19154","artist_credit":"Shawnimals","media":"Paint","year_installed":"2018","location_description":"Cards Against Humanity HQ","street_address":"1551 W Homer Street","zip":"60642","ward":"2","community_area_number":"22","affiliated_or_commissioning":"Cards Against Humanity HQ","description_of_artwork":"Shawn Smith, creator of Shawnimals and Ninjatown, makes things that inspire and delight people.","latitude":"41.91720864","longitude":"-87.66683738","location":{"type":"Point","coordinates":[-87.66683738,41.91720864]},":@computed_region_rpca_8um6":"49",":@computed_region_vrxf_vc4k":"23",":@computed_region_6mkv_f3dw":"22620",":@computed_region_bdys_3d7i":"209",":@computed_region_43wa_7qmu":"11"
+}
+]
