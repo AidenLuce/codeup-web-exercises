@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mapbox_maps_api.html</title>
+    <script src="js/keys.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="js/mapbox-geocoder-utils.js"></script>
+    <style>
+        #map{
+            width: 800px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<div class="container row mx-auto">
+    <div id='map' class="mx-auto mt-4"></div>
+</div>
+<script>
+
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-74.5, 40], // starting position [lng, lat]
+        zoom: 9, // starting zoom
+        projection: 'globe' // display the map as a 3D globe
+    });
+    map.on('style.load', () => {
+        map.setFog({}); // Set the default atmosphere style
+    });
+    map.setZoom(9);
+    map.setCenter([-98.47889, 29.49588])
+    // document.getElementById("zoomSubmit").addEventListener('click', function(e){
+    //     e.preventDefault();
+    //     map.setZoom(document.getElementById("zoom").value)
+    // });
+    // let coords;
+    // function getCoords(address,token){
+    //     geocode(address, token).then(function(coordinates){
+    //         console.log(coordinates);
+    //         coords = coordinates;
+    //     })
+    // }
+
+    let favRestaurants =[
+        {
+            name: "Grimaldis Pizzaria",
+            specialty: "Specialty: Pizza",
+            coordinates: "-98.47889, 29.49588"
+        }, {
+            name: "Brasao Brazilian Steakhouse",
+            specialty: "Specialty: Steak",
+            coordinates: "-98.60711, 29.6208"
+        }, {
+            name: "Bunz",
+            specialty: "Specialty: Burgers",
+            coordinates: "-98.492907, 29.42629"
+        },
+    ]
+
+    favRestaurants.forEach(restaurants => {
+        let coordSplitter = restaurants.coordinates.split(', ')
+        console.log(coordSplitter)
+        let newCoords = {
+            lng: coordSplitter[0],
+            lat: coordSplitter[1]
+        };
+        const newMarker = new mapboxgl.Marker()
+        .setLngLat(newCoords)
+        .addTo(map);
+    const popUp = new mapboxgl.Popup()
+        .setHTML(
+            `<h1 class="mt-3" style="width: 250px;">${restaurants.name}</h1>
+             <p class="mt-3" style="width: 250px;">${restaurants.specialty}</p>`
+        );
+    newMarker.setPopup(popUp)
+    });
+    // const marker1 = new mapboxgl.Marker()
+    // .setLngLat([-98.47889, 29.49588])
+    // .addTo(map)
+    // const popUp1 =new mapboxgl.Popup()
+    // .setHTML(
+    //     '<p class="mt-3" style="width: 250px;">Grimaldis Pizzaria</p>'
+    // );
+    // marker1.setPopup(popUp1)
+    //
+    // const marker2 = new mapboxgl.Marker()
+    //     .setLngLat([-98.60711, 29.6208])
+    //     .addTo(map)
+    // const popUp2 =new mapboxgl.Popup()
+    //     .setHTML(
+    //         '<p class="mt-3" style="width: 250px;">Brasao Brazilian Steakhouse</p>'
+    //     );
+    // marker2.setPopup(popUp2)
+    //
+    // const marker3 = new mapboxgl.Marker()
+    //     .setLngLat([-98.492907, 29.42629])
+    //     .addTo(map)
+    // const popUp3 =new mapboxgl.Popup()
+    //     .setHTML(
+    //         '<p class="mt-3" style="width: 250px;">Bunz</p>'
+    //     );
+    // marker3.setPopup(popUp3)
+
+</script>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
