@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>The Weather is Weathering</title>
     <script src="js/keys.js"></script>
     <!-- CSS only -->
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="css/weather_map.css">
 </head>
@@ -20,8 +24,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <form class="d-flex p-3" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input class="searchbar me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success search-button" type="submit">Search</button>
                 </form>
             </div>
         </div>
@@ -29,22 +33,22 @@
 
 <!-- Weather info cards begin-->
 
-<header class="container-fluid row">
-    <div class="card col-3">
-        <div class="card-body">
+<header class="container-fluid row bg-danger">
+    <div class="card  bg-dark col-4">
+        <div class="card-body-today ">
             <h6 class="bg-dark text-light" id="date1"></h6>
-            <img src="..." class="card-img-top" alt="..." id="cardImage1">
-            <p class="card-text" id="temp1"></p>
-            <p class="card-text" id="description1">Description: </p>
-            <p class="card-text" id="humidity1">Humidity: </p>
-            <p class="card-text" id="wind1">Wind: </p>
-            <p class="card-text" id="pressure1">Pressure: </p>
+            <img src="" class="card-img-top" alt="..." id="cardImage1">
+            <p class="card-text text-light" id="temp1"></p>
+            <p class="card-text text-light" id="description1">Description: </p>
+            <p class="card-text text-light" id="humidity1">Humidity: </p>
+            <p class="card-text text-light" id="wind1">Wind: </p>
+            <p class="card-text text-light" id="pressure1">Pressure: </p>
         </div>
     </div>
-    <div class="card col-3">
-        <div class="card-body">
+    <div class="card col-2 next-days">
+        <div class="card-body ">
             <h6 class="bg-dark text-light" id="date2"></h6>
-            <img src="..." class="card-img-top" alt="..." id="cardImage2">
+            <img src="" class="card-img-top" alt="..." id="cardImage2">
             <p class="card-text" id="temp2"></p>
             <p class="card-text" id="description2">Description: </p>
             <p class="card-text" id="humidity2">Humidity: </p>
@@ -52,10 +56,10 @@
             <p class="card-text" id="pressure2">Pressure: </p>
         </div>
     </div>
-    <div class="card col-3">
+    <div class="card col-2 next-days">
         <div class="card-body">
             <h6 class="bg-dark text-light" id="date3"></h6>
-            <img src="..." class="card-img-top" alt="..." id="cardImage3">
+            <img src="" class="card-img-top" alt="..." id="cardImage3">
             <p class="card-text" id="temp3"></p>
             <p class="card-text" id="description3">Description: </p>
             <p class="card-text" id="humidity3">Humidity: </p>
@@ -63,10 +67,10 @@
             <p class="card-text" id="pressure3">Pressure: </p>
         </div>
     </div>
-    <div class="card col-3">
+    <div class="card col-2 next-days">
         <div class="card-body">
             <h6 class="bg-dark text-light" id="date4"></h6>
-            <img src="..." class="card-img-top" alt="..." id="cardImage4">
+            <img src="" class="card-img-top" alt="..." id="cardImage4">
             <p class="card-text" id="temp4"></p>
             <p class="card-text" id="description4">Description: </p>
             <p class="card-text" id="humidity4">Humidity: </p>
@@ -74,10 +78,10 @@
             <p class="card-text" id="pressure4">Pressure: </p>
         </div>
     </div>
-    <div class="card col-3">
+    <div class="card col-2 next-days">
         <div class="card-body">
             <h6 class="bg-dark text-light" id="date5"></h6>
-            <img src="..." class="card-img-top" alt="..." id="cardImage5">
+            <img src="" class="card-img-top" alt="..." id="cardImage5">
             <p class="card-text" id="temp5"></p>
             <p class="card-text" id="description5">Description: </p>
             <p class="card-text" id="humidity5">Humidity: </p>
@@ -86,11 +90,14 @@
         </div>
     </div>
 </header>
-
+<main class="container bg-primary">
+    <div id="mainMap"></div>
+</main>
 
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 <script src="js/jquery-3.6.1.min.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script src="js/weather-map-utils.js"></script>
 <script src="js/weather_map.js"></script>
 </body>

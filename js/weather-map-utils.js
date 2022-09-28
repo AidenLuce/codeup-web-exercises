@@ -69,3 +69,11 @@ function formatTime(timeStamp){
     return month + " / " + day + " / " + year
         // + " " + hour + ":" + minutes + ":" + seconds;
 }
+
+let coords;
+function getCoords(address,token){
+    geocode(address, token).then(function(coordinates){
+        console.log(coordinates);
+        coords = coordinates;
+    })
+}
