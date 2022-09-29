@@ -11,10 +11,13 @@ $(function(){
 
         /* for loop for generating cards*/
 
-        function renderCards(forecast){
-            for(let i = 0; i < forecast.list.length -1; i+=8){
+        function renderCards(data){
+            $('#date').empty();
+            console.log("inside renderCards");
+            for(let i = 0; i < data.list.length -1; i+=8){
                     let icon = data.list[i].weather[0].icon
                     let iconUrl = "http://openweathermap.org/img/w/" + icon + ".png";
+                console.log("about to append #date cards");
                     $('#date').append(`
                         <div class="mx-3 col-2" >
                             <div class="card ">
@@ -34,13 +37,14 @@ $(function(){
         map.on('click', (newCoords) => {
             console.log(newCoords.lngLat)
             map.setCenter(newCoords.lngLat)
-            map.setZoom(7)
+            map.setZoom(5)
             $.get("http://api.openweathermap.org/data/2.5/forecast", {
                 APPID: OPEN_WEATHER_APPID,
                 lat: newCoords.lngLat.lat,
                 lon: newCoords.lngLat.lng,
                 units: "imperial"
             }).done(function (data) {
+                console.log(data)
                 renderCards(data);
                 $("#newLocation").html(`Current Location: ${data.city.name}`)
 
