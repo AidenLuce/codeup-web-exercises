@@ -21,15 +21,31 @@ $(function(){
                                 <h6>${formatTime(data.list[i].dt)}</h6>
                                 <img src='${iconUrl}' class="card-img-top" alt="..." id="image">
                                 <p>${data.list[i].main.temp}</p>
-                                <p>${data.list[i].weather[0].description}</p>
-                                <p>${data.list[i].main.humidity}</p>
-                                <p>${data.list[i].wind.speed}</p>
-                                <p>${data.list[i].main.pressure}</p>
+                                <p>Description: ${data.list[i].weather[0].description}</p>
+                                <p>Humidity: ${data.list[i].main.humidity}</p>
+                                <p>Wind: ${data.list[i].wind.speed}</p>
+                                <p>Pressure: ${data.list[i].main.pressure}</p>
                             </div>
                         </div>
                     `)
             }
         }
+
+        map.on('click', (newCoords) => {
+            console.log(newCoords.lngLat)
+            map.setCenter(newCoords.lngLat)
+            map.setZoom(7)
+            $.get("http://api.openweathermap.org/data/2.5/forecast", {
+                APPID: OPEN_WEATHER_APPID,
+                lat: newCoords.lngLat.lat,
+                lon: newCoords.lngLat.lng,
+                units: "imperial"
+            }).done(function (data) {
+                renderCards(data);
+                $("#newLocation").html(`Current Location: ${data.city.name}`)
+
+            });
+        })
         // searchbar
         let $userInput = $('.searchbar');
 
@@ -40,21 +56,22 @@ $(function(){
             geocode($userInput.val(), MAPBOX_API_TOKEN).then(coords => {
                 map.setCenter(coords);
                 marker.setLngLat(coords)
+                console.log(marker.setLngLat(coords))
                 //gets data for new location
                 $.get("http://api.openweathermap.org/data/2.5/forecast", {
                     APPID: OPEN_WEATHER_APPID,
                     lat: coords[1],
                     lon: coords[0],
                     units: "imperial"
-                }).done(function (newData) {
-                    console.log("New Data:")
-                    console.log(newData);
-                    renderCards(newData);
+                }).done(function(data){
+                    console.log("forecasts:")
+                    console.log(data)
+                    renderCards(data);
+                    $("#newLocation").html(`Current Location: ${data.city.name}`)
                 });
             });
         });
     });
-
 
 });
 
@@ -73,4 +90,4 @@ const map = new mapboxgl.Map({
 map.on('style.load', () => {
     map.setFog({}); // Set the default atmosphere style
 });
-let marker = new mapboxgl.Marker().setLngLat([-98.4916, 29.4252]).addTo(map)
+let marker = new mapboxgl.Marker({draggable: true}).setLngLat([-98.4916, 29.4252]).addTo(map)
