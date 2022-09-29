@@ -12,13 +12,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="css/weather_map.css">
 </head>
-<body>
+<body style="background-size: cover ;background-image: url('https://img.freepik.com/free-vector/blue-sky-with-shiny-clouds-background_1017-23279.jpg?w=2000')">
 
 <!-- Nav bar begins-->
 
     <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand text-light" href="#">The Weather is Weathering</a>
+            <a class="navbar-brand text-success" href="#">The Weather is Weathering</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -32,71 +32,12 @@
     </nav>
 
 <!-- Weather info cards begin-->
-<h3 id="newLocation" class="bg-danger"></h3>
-<section id="date" class="d-flex">
-<!--   cards get printed here-->
+<h3 id="newLocation" class="bg-info"></h3>
+<section id="date" class="d-flex justify-content-center" >
+    <!--   cards get printed here-->
 </section>
-
-<!--<header class="container-fluid row bg-danger">-->
-
-<!--    <div class="card  bg-dark col-4">-->
-<!--        <div class="card-body-today ">-->
-<!--            <h6 class="bg-dark text-light" id="date1"></h6>-->
-<!--            <img src="" class="card-img-top" alt="..." id="cardImage1">-->
-<!--            <p class="card-text text-light" id="temp1"></p>-->
-<!--            <p class="card-text text-light" id="description1">Description: </p>-->
-<!--            <p class="card-text text-light" id="humidity1">Humidity: </p>-->
-<!--            <p class="card-text text-light" id="wind1">Wind: </p>-->
-<!--            <p class="card-text text-light" id="pressure1">Pressure: </p>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="card col-2 next-days">-->
-<!--        <div class="card-body ">-->
-<!--            <h6 class="bg-dark text-light" id="date2"></h6>-->
-<!--            <img src="" class="card-img-top" alt="..." id="cardImage2">-->
-<!--            <p class="card-text" id="temp2"></p>-->
-<!--            <p class="card-text" id="description2">Description: </p>-->
-<!--            <p class="card-text" id="humidity2">Humidity: </p>-->
-<!--            <p class="card-text" id="wind2">Wind: </p>-->
-<!--            <p class="card-text" id="pressure2">Pressure: </p>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="card col-2 next-days">-->
-<!--        <div class="card-body">-->
-<!--            <h6 class="bg-dark text-light" id="date3"></h6>-->
-<!--            <img src="" class="card-img-top" alt="..." id="cardImage3">-->
-<!--            <p class="card-text" id="temp3"></p>-->
-<!--            <p class="card-text" id="description3">Description: </p>-->
-<!--            <p class="card-text" id="humidity3">Humidity: </p>-->
-<!--            <p class="card-text" id="wind3">Wind: </p>-->
-<!--            <p class="card-text" id="pressure3">Pressure: </p>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="card col-2 next-days">-->
-<!--        <div class="card-body">-->
-<!--            <h6 class="bg-dark text-light" id="date4"></h6>-->
-<!--            <img src="" class="card-img-top" alt="..." id="cardImage4">-->
-<!--            <p class="card-text" id="temp4"></p>-->
-<!--            <p class="card-text" id="description4">Description: </p>-->
-<!--            <p class="card-text" id="humidity4">Humidity: </p>-->
-<!--            <p class="card-text" id="wind4">Wind: </p>-->
-<!--            <p class="card-text" id="pressure4">Pressure: </p>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="card col-2 next-days">-->
-<!--        <div class="card-body">-->
-<!--            <h6 class="bg-dark text-light" id="date5"></h6>-->
-<!--            <img src="" class="card-img-top" alt="..." id="cardImage5">-->
-<!--            <p class="card-text" id="temp5"></p>-->
-<!--            <p class="card-text" id="description5">Description: </p>-->
-<!--            <p class="card-text" id="humidity5">Humidity: </p>-->
-<!--            <p class="card-text" id="wind5">Wind: </p>-->
-<!--            <p class="card-text" id="pressure5">Pressure: </p>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</header>-->
-<main class="container bg-primary">
-    <div id="mainMap"></div>
+<main class="container bg-light">
+    <div id="mainMap" class="mb-4"></div>
 </main>
 
 <!-- JavaScript Bundle with Popper -->

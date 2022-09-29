@@ -19,11 +19,11 @@ $(function(){
                     let iconUrl = "http://openweathermap.org/img/w/" + icon + ".png";
                 console.log("about to append #date cards");
                     $('#date').append(`
-                        <div class="mx-3 col-2" >
-                            <div class="card ">
-                                <h6>${formatTime(data.list[i].dt)}</h6>
+                        <div class="m-4 col-2" >
+                            <div class="card bg-dark text-light">
+                                <h4 class="text-info">${formatTime(data.list[i].dt)}</h4>
                                 <img src='${iconUrl}' class="card-img-top" alt="..." id="image">
-                                <p>${data.list[i].main.temp}</p>
+                                <h5 class="text-warning">${data.list[i].main.temp}</h5>
                                 <p>Description: ${data.list[i].weather[0].description}</p>
                                 <p>Humidity: ${data.list[i].main.humidity}</p>
                                 <p>Wind: ${data.list[i].wind.speed}</p>
@@ -37,7 +37,7 @@ $(function(){
         map.on('click', (newCoords) => {
             console.log(newCoords.lngLat)
             map.setCenter(newCoords.lngLat)
-            map.setZoom(5)
+
             $.get("http://api.openweathermap.org/data/2.5/forecast", {
                 APPID: OPEN_WEATHER_APPID,
                 lat: newCoords.lngLat.lat,
@@ -88,7 +88,7 @@ const map = new mapboxgl.Map({
     container: 'mainMap', // container ID
     style: 'mapbox://styles/mapbox/dark-v10', // style URL
     center: [-98.4916, 29.4252], // starting position [lng, lat]
-    zoom: 17, // starting zoom
+    zoom: 5, // starting zoom
     projection: 'globe' // display the map as a 3D globe
 });
 map.on('style.load', () => {
