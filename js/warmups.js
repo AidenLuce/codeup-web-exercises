@@ -82,20 +82,31 @@
  *       {name: 'Kenneth Howell', pets: 2}
  *    ]) ➞ 11
  */
-peopleAndPets=[
-    {name: 'Fernando Mendoza', pets: 1},
-    {name: 'Douglas Hirsh', pets: 8},
-    {name: 'Kenneth Howell', pets: 2}
-]
+// peopleAndPets=[
+//     {name: 'Fernando Mendoza', pets: 1},
+//     {name: 'Douglas Hirsh', pets: 8},
+//     {name: 'Kenneth Howell', pets: 2}
+// ]
+//
+// function totalPets(arrayOfObjects){
+//     let total = 0;
+//     for (let i = 0; i < arrayOfObjects.length; i++){
+//         total += arrayOfObjects[i].pets
+//     }
+//     return totalPets()
+// }
 
-function totalPets(arrayOfObjects){
-    let total = 0;
-    for (let i = 0; i < arrayOfObjects.length; i++){
-        total += arrayOfObjects[i].pets
-    }
-    return totalPets()
-}
+/*================== DOM WARMUPS ===================================*/
 
+// When the user clicks the button that has the text "Change Heading", the
+// text of the <h1> element changes to read "I own the DOM"
 
+// Every time the user enters a character in the input with id "source", that
+// character appears in the <p> element with the id "output"
 
-
+$("button").on("click", function(){
+    $("h1").html("I own the DOM")
+});
+$("#source").on("input", function(){
+   $("#output").text($("#source").val());
+})

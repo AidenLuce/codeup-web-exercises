@@ -12,16 +12,16 @@ let output = '';
 //
 // });
 
-const pricesAfterTax = prices.map(price =>{
-    const tax = (price *.0285).toFixed(2)
-    const total = (price + parseFloat(tax)).toFixed(2)
-    return parseFloat(total);
-});
-console.log(prices)
-console.log(pricesAfterTax)
-
-const doubledArray = prices.map(price => price * 2);
-console.log(doubledArray);
+// const pricesAfterTax = prices.map(price =>{
+//     const tax = (price *.0285).toFixed(2)
+//     const total = (price + parseFloat(tax)).toFixed(2)
+//     return parseFloat(total);
+// });
+// console.log(prices)
+// console.log(pricesAfterTax)
+//
+// const doubledArray = prices.map(price => price * 2);
+// console.log(doubledArray);
 
 // const dessert = ['sherbet', 'whiskey cake', 'cupcake', 'eclair'];
 // const eatingDessert = dessert.map(dessert => `Eating ${dessert}`)
@@ -57,14 +57,14 @@ const cars = [
     }
 ];
 
-const mileages = cars.map(car => car.mileage);
-console.log(mileages)
-
-const newObject = cars.map(car => {
-    car.newProp = 'new property';
-    return car;
-})
-console.log(cars[0]);
+// const mileages = cars.map(car => car.mileage);
+// console.log(mileages)
+//
+// const newObject = cars.map(car => {
+//     car.newProp = 'new property';
+//     return car;
+// })
+// console.log(cars[0]);
 
 
 
@@ -73,23 +73,56 @@ console.log(cars[0]);
  /** filtered through prices under $10
   *  .filter example */
 
-prices.filter(price => price<10)
-.map(price => {
-    const tax = (price * .0825).toFixed(2)
-    const total = (price + parseFloat(tax)).toFixed(2)
-    return parseFloat(total);
-}).forEach(price => $("div").append(`<p>${price}</p>`))
+// prices.filter(price => price<10)
+// .map(price => {
+//     const tax = (price * .0825).toFixed(2)
+//     const total = (price + parseFloat(tax)).toFixed(2)
+//     return parseFloat(total);
+// }).forEach(price => $("div").append(`<p>${price}</p>`))
 
 
 
 
 /** .reduce example */
-const totalCost = prices.reduce(function(total, price){
-    return total + price;
+const totalCost = prices.reduce(function(total, itemPrice, index){
+    // console.log(`The index is ${index}, the total is ${total.toFixed(2)}, the itemPrice is ${itemPrice}`);
+    return total + itemPrice;
 });
-console.log(totalCost)
+// $("#output").append(`<p>The total is ${totalCost}</p>`);
 
+// accumulator = acc
 
+// const averagePrice = prices.reduce(function (accumulator, current, index, array){
+//     accumulator += current
+//     if(index === array.length -1){
+//     return accumulator/arrray.length;
+//     }
+// return accumulator;
+// })
+
+const total = prices.reduce(function(total, priceOfItem){
+    return total + priceOfItem;
+}, 158.76);
+console.log(total.toFixed(2));
+
+// const highestMileage = cars.reduce((accumulator, car, index, array ) =>{
+//     accumulator.push(car.mileage);
+//     if (index === array.length -1){
+//         Math.max(...accumulator)
+//     } else {accumulator.push(car.mileage);
+//         return accumulator
+//     }
+// },[] );
+// console.log(highestMileage)
+
+const highestMileage = cars.reduce((accumulator, car) =>{
+    accumulator.push(car.mileage);
+    return accumulator;
+},[]).reduce((accumulator, mileage)=>{
+    return Math.max(accumulator, mileage);
+});
+
+console.log(highestMileage)
 
 
 
