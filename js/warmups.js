@@ -110,3 +110,21 @@ $("button").on("click", function(){
 $("#source").on("input", function(){
    $("#output").text($("#source").val());
 })
+
+/*================== DOM WARMUPS PT2===================================*/
+
+
+// When the mouse enters the h2 with the text "Lorem Generator",
+// A paragraph contain lorem appears in the div with the id of loremParagraphs
+
+const lorem = "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi debitis, deserunt doloremque dolores esse expedita harum ipsum maiores minus neque perferendis quae quaerat, quas quis sit suscipit vel veniam, voluptatum.</p>";
+$("#loremParagraphs h2").mouseenter(function(){
+    $("#loremParagraphs").append(lorem)
+})
+
+// When the user clicks on the "Hot Pink It" button, all the text in the div
+// with the id of loremParagraphs becomes hotpink if it's black, or black if it's hotpink.
+
+$("#hotPinkIt").on("click", function(){
+    $("#loremParagraphs").toggleClass("hotpink");
+})
